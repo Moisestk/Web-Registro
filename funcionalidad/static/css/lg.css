@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(/media/Fondoscss/Fondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;;
+    
+}
+
+
+.login-container {
+    background: #fff;
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    width: 360px;
+    text-align: center;
+}
+
+.login-form h2 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #aaa;
+    outline: none;
+    background: transparent;
+    transition: border-color 0.4s;
+}
+
+.input-container label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    font-size: 16px;
+    color: #aaa;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.input-container input:focus ~ label,
+.input-container input:not(:placeholder-shown) ~ label {
+    top: 0;
+    left: 5px;
+    font-size: 12px;
+    color: #007bff;
+}
+
+.input-container input:focus,
+.input-container input:valid {
+    border-color: #007bff;
+}
+
+.focus-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #007bff ;
+    transition: 0.4s;
+}
+
+.input-container input:focus ~ .focus-border {
+    width: 100%;
+    transition: 0.4s;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.A{
+    text-decoration: none;
+    color: #007bff;
+}
+
+.A:hover{
+   color: #0056b3;
+}

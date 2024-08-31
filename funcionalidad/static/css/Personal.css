@@ -1,0 +1,152 @@
+body{
+    background-image: url(/media/Fondoscss/Fondo3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;;
+}
+
+.form {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: black;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 800px;
+    max-width:100%;
+}
+
+.form-box {
+    padding: 30px;
+    flex: 1;
+}
+
+.info-box {
+    background: #007bff;
+    color: #fff;
+    padding: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-box h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.info-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-box ul li {
+    margin-bottom: 10px;
+}
+
+.info-box ul li a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 3px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Estilo adicional para el campo select */
+.form-group select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    appearance: none; 
+}
+
+.form-right {
+    color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.form-right img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.form-right p {
+    font-size: 20px;
+    margin: 0;
+}
+
+
+.boton {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px  ;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #0056b3;
+}
+
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 800px) {
+    .contenedor {
+        flex-direction: column;
+    }
+
+    .info-box {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .form-box {
+        padding: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+    }
+}

@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+body{
+    background-image: url(/media/Fondoscss/Fondo2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;;
+}
+.fondo {
+    background-color: f6f5f7;
+    color: #ffffff;
+    text-align: center;
+}
+.caja{
+    margin-bottom: 30px;
+    font-family: 'Arial', sans-serif; /* Puedes cambiar a otra fuente moderna si lo deseas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+}
+
+.regis{
+    padding: 15px;
+    border: none;
+    background-color: #3498db;
+    color: #ffffff;
+    font-size: 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.regis:hover {
+    background-color: #0056b3;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;   
+    background-color: #f7f9f9;
+    height: 50px;
+}
+.navbar a {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+}
+.navbar a:hover {
+    color: #007bff;
+}
+
+.navbar-container {
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+
+.nav-menu {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-item {
+    margin-left: 25px;
+}
+
+
+.openbtn {
+    font-size: 1.5rem;
+    cursor: pointer;
+    background-color: #f7f9f9;
+    border: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+}
+
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #171717;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color:#007bff ;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 2rem;
+    margin-left: 50px;
+}
+
+.tabla{
+    font-size: 10px;
+}
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        opacity: 0;
+        transition: all 0.5s ease;
+        background-color: #1f1f1f;
+    }
+
+    .nav-menu.active {
+        left: 0;
+        opacity: 1;
+    }
+
+    .nav-item {
+        margin: 20px 0;
+    }
+    .navbar a {
+        display: none;
+
+    }
+
+    .openbtn {
+        display: block;
+    }
+
+}

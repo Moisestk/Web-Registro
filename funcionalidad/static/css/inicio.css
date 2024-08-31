@@ -1,0 +1,78 @@
+body{
+   background-image: url("/media/Fondoscss/Fondo.jpg");
+     background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;;
+}
+
+.a{
+    text-decoration: none;
+    color: #fff;
+
+}
+.atras {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: black;
+  
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.profile-pic {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic img {
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover; 
+    border: 4px solid #007bff; 
+}
+
+
+
+.content {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 0 10px;
+    
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}

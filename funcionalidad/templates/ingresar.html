@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ingresar</title>
+    <link rel="icon"  href="{% static "img/logo.png" %}" />
+    <link rel="stylesheet" href="{% static 'css/lg.css' %}" />
+  </head>
+  <body>
+
+
+    <div class="login-container">
+        <form class="login-form" method="POST" id="loginFormn">
+            {% csrf_token %}
+            <h2>Iniciar Sesión</h2>
+            <div class="input-container">
+                <input type="text" name="username" id="username" required />
+                <label>Usuario</label>
+                <span class="focus-border"></span>
+            </div>
+            <div class="input-container">
+                <input type="password" name="password" id="password" required />
+                <label>Contraseña</label>
+                <span class="focus-border"></span>
+            </div>
+            <button type="submit">Entrar</button>
+            <br>
+            <br>
+            <p id="alertas"></p>      
+            <p><strong>{{ error }}</strong></p>
+            <br>
+           
+        </form>
+        <a class="A" href="/registrar">Registrate Ahora</a>
+
+
+    </div>
+
+    <script>
+      document.getElementById('loginForm').addEventListener('submit', function(event) {
+          let username = document.getElementById('username').value;
+          let password = document.getElementById('password').value;
+          let alerta = document.getElementById('alertas')
+          alerta.innerHTML = ""
+  
+          if (password.length < 8) {
+            alerta.innerHTML = ("La contraseña debe tener al menos 8 caracteres.");
+              event.preventDefault(); // Evita que el formulario se envíe
+          }
+  
+          if (!username || !password) {
+            alerta.innerHTML = ("Todos los campos son obligatorios.");
+              event.preventDefault();
+          }
+      });
+  </script>
+  </body>
+</html>

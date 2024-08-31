@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Registrado</title>
+    <link rel="icon"  href="{% static "img/logo.png" %}" />
+      <link rel="stylesheet" href="{% static 'css/barra.css' %}">
+      <link rel="stylesheet" href="{% static 'css/tabla.css' %}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <button class="openbtn" style="color: black;" onclick="openNav()">&#9776;</button>
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <a href="/micuenta"> {{user.username}}</a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" style="color: black;" class="bi bi-person-fill" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                  </svg>  
+            </ul>
+        </div>
+    </nav>
+<div>
+    
+    <!-- Menú lateral -->
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="{% url "inicio" %}">Inicio</a>
+        <a href="/nuevopersonal">Registrar Personal</a>
+        <a href="/micuenta">Mi Cuenta</a>
+        <a href="#contacto">Contacto</a>
+    </div>
+    
+<div class="todo">
+  <div class="espacio">
+    <h1 class="titulo">Personal Registrado</h1>
+  </div>
+    
+
+
+    <div class="centro">
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Cedula</th>
+                    <th>Fecha de Ingreso</th>
+                    <th>Salario</th>
+                    <th>Cargo</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in Personal %}    
+                <tr>
+                    <tr data-index="0">
+                        <td>{{user.nombre}}</td>
+                        <td>{{user.apellido}}</td>
+                        <td>{{user.cedula}}</td>
+                        <td>{{user.fecha_nacimiento}}</td>
+                        <td>{{user.salario}}$</td>
+                        <td>{{user.tipo}}</td>
+                        <td><a style="text-decoration: none; color: #007bff;  " href="{% url 'editar' user.id %}">Editar</a> | <a style="text-decoration: none; color: red;" href="#"  onclick="eliminarProducto({{ user.id}})">Eliminar</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+
+
+     
+    function eliminarProducto(id){
+        Swal.fire({
+            "title": "Estas Seguro?",
+            "text": "Esta accion no se puede Deshacer",
+            "showCancelButton": true,
+            "cancelButtonText": "Cancelar",
+            "confirmButtonText": "Eliminar",
+            "reverseButtons": true,
+            "confirmButtonColor": "brown"
+        })
+        .then (function(result) {
+            if(result.isConfirmed) {
+                window.location.href = "/eliminar/"+id+"/"
+            }
+        })
+        
+        
+     }
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+    }
+
+
+   
+</script>
+
+
+
+
+</body>
+</html>

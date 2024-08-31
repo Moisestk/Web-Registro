@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Cuenta</title>
+    <link rel="icon"  href="{% static "img/logo.png" %}" />
+    <link rel="stylesheet" href="{% static 'css/barra.css' %}" />
+    <link rel="stylesheet" href="{% static "css/inicio.css" %}">
+  </head>
+  <body >
+<div class="fondo">
+    <nav class="navbar">
+      <div class="navbar-container">
+          <button class="openbtn" style="color: black;" onclick="openNav()">&#9776;</button>
+              <i class="fas fa-bars"></i>
+          </div>
+          <ul class="nav-menu">
+            <a href="#services"></a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" style="color: black;" class="bi bi-person-fill" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+              </svg>  
+        </ul>
+      </div>
+  </nav>
+<div>
+
+  <!-- Menú lateral -->
+  <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="{% url "inicio" %}">Inicio</a>
+      <a href="/registros">Personal</a>
+      <a href="/nuevopersonal">Registrar Personal</a>
+      <a href="#contacto">Contacto</a>
+      
+  </div>
+</div>
+
+<div class="atras">
+
+<div class="container">
+  <div style="text-align: left;" class="content">
+      <h1 style="text-align: center;">Mis Datos</h1>
+       <br>
+       <br>
+  
+      <p><strong>Nombre de  Usuario: </strong> {{user.username}}</p>
+      <br>
+      <p><strong>Nombre y Apellido: </strong> {{user.first_name}}</p>
+      <br>
+      <p><strong>Correo Electronico: </strong>{{user.email}}</p>
+<br>
+<br>
+  </div>
+</div>
+
+</div>
+
+<script>
+  function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+  }
+
+  function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+  }
+</script>
+</body>
+</html>

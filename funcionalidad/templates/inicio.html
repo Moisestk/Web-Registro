@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon"  href="{% static "img/logo.png" %}" />
+    <link rel="stylesheet" href="{% static 'css/barra.css' %}">
+    <link rel="stylesheet" href="{% static "css/inicio.css" %}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <button class="openbtn" onclick="openNav()" style="color: black;">&#9776;</button>
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <a href="#services">Servicios</a>
+                <a href="#about">Nosotros</a>
+                <a href="#">About</a>
+            </ul>
+        </div>
+    </nav>
+<div>
+
+    <!-- Menú lateral -->
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="{% url "inicio" %}">Inicio</a>
+        <a href="/ingresar">Ingresar</a>
+        <a href="/registrar">Crear Cuenta</a>
+        <a href="#contact">Contacto</a>
+    </div>
+
+    
+</div>
+<div class="atras">
+<div class="container">
+    <div class="content">
+        <div class="profile-pic">
+            <img src="{% static 'img/perro.jpg' %}" alt="Perfil">
+        </div>
+        <h1>Bienvenido!</h1>
+        <h2>Registro de datos de Personal</h2>    
+        <div class="button-container">
+
+            <button class="btn"><a class="a" href="/ingresar">Ingresar</a></button>
+            <button class="btn"><a class="a" href="/registrar">Crear Cuenta</a></button>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+<script>
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+    }
+</script>
+</body>
+</html>

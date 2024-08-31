@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrar Personal</title>
+    <link rel="icon"  href="{% static "img/logo.png" %}" />
+    <link rel="stylesheet" href="{% static 'css/barra.css' %}" />
+    <link rel="stylesheet" href="{% static "css/Personal.css" %}">
+  </head>
+  <body >
+<div class="fondo">
+    <nav class="navbar">
+      <div class="navbar-container">
+          <button class="openbtn" style="color: black;" onclick="openNav()">&#9776;</button>
+              <i class="fas fa-bars"></i>
+          </div>
+          <ul class="nav-menu">
+            <a href="/micuenta"> {{user.username}}</a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" style="color: black;" class="bi bi-person-fill" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+              </svg>  
+        </ul>
+      </div>
+  </nav>
+<div>
+
+  <!-- Menú lateral -->
+  <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="{% url "inicio" %}">Inicio</a>
+      <a href="/registros">Personal</a>
+      <a href="/micuenta">Mi Cuenta</a>
+      <a href="#contacto">Contacto</a>
+  </div>
+</div>
+
+
+  <div class="form">
+    <div class="contenedor">
+        <div class="form-box">
+            <form  action="" method="POST" enctype="multipart/form-data" id="form">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="">Nombre</label>
+                    <input type="text" id="firstName" name="nombre" value="{{ form.nombre.value|default:'' }}"  required>
+                    {{ form.nombre.errors }}
+                </div>
+                <div class="form-group">
+                    <label for="">Apellido</label>
+                    <input type="text" id="" name="apellido"  value="{{ form.apellido.value|default:'' }}"  required>
+                    {{ form.apellido.errors }}
+                </div>
+                <div class="form-group">
+                    <label for="">Documento de Identidad</label>
+                    <input type="number" id="" name="cedula"  value="{{ form.cedula.value|default:'' }}"  required>
+                    {{ form.cedula.errors }}
+                </div>
+                <div class="form-group">
+                    <label for="phone">Fecha de Ingreso</label>
+                    <input type="date" id="" name="fecha_nacimiento" required>
+                    {{ form.fecha_nacimiento.errors }}
+                </div>
+                <div class="form-group">
+                    <label for="">Tipo de Personal</label>
+                    <select name="tipo" id="">
+                      <option value="">Seleccione</option>
+                      {% for tipos in tipos %}
+                        <option value="{{ tipos.id }}">{{ tipos.tipo_personal }}</option>
+                      {% endfor %}
+                    </select>
+                    {{ form.tipos.errors }}
+                </div>
+                <div class="form-group">
+                    <label for="">Salario</label>
+                    <input type="number" id="email" name="salario"  value="{{ form.salario.value|default:'' }}" required>$
+                    {{ form.salario.errors }}
+
+                </div>
+                {{form.errors}}
+                <input type="hidden" name="usuario" value="{{ user.id }}" /><button class="boton" type="submit">Registrar</button>
+            </form>
+        </div>
+        <div class="info-box">
+          <div class="form-right">
+            <img src="{% static 'img/perro.jpg' %}" alt="User Photo">
+            <p>Nuevo Personal</p> 
+        </div>
+        </div>
+    </div>
+</div>
+
+  <script>
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+    }
+</script>
+  </body>
+</html>

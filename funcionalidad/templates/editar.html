@@ -33,7 +33,7 @@
       <a href="/registros">Personal</a>
       <a href="/nuevopersonal">Registrar Personal</a>
       <a href="/micuenta">Mi Cuenta</a>
-      <a href="#contacto">Contacto</a>
+      <a href="https://www.instagram.com/moisesdk0/">Contacto</a>
   </div>
 </div>
 
@@ -60,8 +60,8 @@
                 </div>
                 <div class="form-group">
                     <label for="">Fecha de Ingreso</label>
-                  <input type="date" id="" name="fecha_nacimiento" value="{{ form.fecha_nacimiento.value|date:'Y-m-d'}}"  required >
-                    {{ form.fecha_nacimiento.errors }}
+                  <input type="date" id="" name="fecha" value="{{ form.fecha.value|date:'Y-m-d'}}"  required >
+                    {{ form.fecha.errors }}
                 </div>
                 <div class="form-group">
                     <label for="">Tipo de Personal</label>
@@ -89,7 +89,7 @@
         </div>
         <div class="info-box">
           <div class="form-right">
-            <img src="{% static 'img/perro.jpg' %}" alt="User Photo">
+            <img src="{% static 'img/nuevo.png' %}" alt="User Photo">
             <p>Editar Personal</p>
         </div>
         </div>

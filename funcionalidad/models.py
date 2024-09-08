@@ -14,7 +14,7 @@ class Personal (models.Model):
     nombre = models.TextField(null=True)
     apellido = models.TextField(null=True)
     cedula = models.TextField(null=True)
-    fecha_nacimiento = models.DateField(null=True)
+    fecha = models.DateField(null=True)
     salario = models.TextField()
 
     def __str__(self):

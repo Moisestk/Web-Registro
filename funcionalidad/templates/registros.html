@@ -32,7 +32,7 @@
         <a href="{% url "inicio" %}">Inicio</a>
         <a href="/nuevopersonal">Registrar Personal</a>
         <a href="/micuenta">Mi Cuenta</a>
-        <a href="#contacto">Contacto</a>
+        <a href="https://www.instagram.com/moisesdk0/">Contacto</a>
     </div>
     
 <div class="todo">
@@ -63,8 +63,8 @@
                         <td>{{user.nombre}}</td>
                         <td>{{user.apellido}}</td>
                         <td>{{user.cedula}}</td>
-                        <td>{{user.fecha_nacimiento}}</td>
-                        <td>{{user.salario}}$</td>
+                        <td>{{user.fecha}}</td>
+                        <td>{{user.salario}} <strong>$</strong></td>
                         <td>{{user.tipo}}</td>
                         <td><a style="text-decoration: none; color: #007bff;  " href="{% url 'editar' user.id %}">Editar</a> | <a style="text-decoration: none; color: red;" href="#"  onclick="eliminarProducto({{ user.id}})">Eliminar</a></td>
                 </tr>
